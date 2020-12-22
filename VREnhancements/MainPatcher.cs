@@ -12,6 +12,8 @@ using UnityEngine.UI;
 using UnityEngine.XR;
 using System.Diagnostics;
 using Debug = UnityEngine.Debug;
+using static OVRInput;
+using Button = UnityEngine.UI.Button;
 
 namespace VREnhancements
 {
@@ -53,6 +55,10 @@ namespace VREnhancements
 
 		public MainPatcher()
 		{
+		}
+
+		public void Start()
+		{
 			if (XRSettings.enabled)
 			{
 				MainPatcher.harmony.Patch(AccessTools.Method(typeof(GameOptions), nameof(GameOptions.GetVrAnimationMode)), postfix: new HarmonyMethod(typeof(MainPatcher).GetMethod("GetVrAnimationMode_Postfix")));
@@ -93,16 +99,15 @@ namespace VREnhancements
 				MainPatcher.harmony.Patch(AccessTools.Method(typeof(ArmsController), nameof(ArmsController.Reconfigure)), postfix: new HarmonyMethod(typeof(MainPatcher).GetMethod("Reconfigure_Postfix")));
 				MainPatcher.harmony.Patch(AccessTools.Method(typeof(ArmsController), nameof(ArmsController.Start)), postfix: new HarmonyMethod(typeof(MainPatcher).GetMethod("ArmsCon_Start_Postfix")));
 
-				MainPatcher.harmony.Patch(AccessTools.Method(typeof(VROptions), nameof(VROptions.GetUseGazeBasedCursor)), postfix: new HarmonyMethod(typeof(MainPatcher).GetMethod("GetUseGazeBasedCursorPostfix")));
-				MainPatcher.harmony.Patch(AccessTools.Method(typeof(FPSInputModule), nameof(FPSInputModule.GetCursorScreenPosition)), postfix: new HarmonyMethod(typeof(MainPatcher).GetMethod("GetCursorScreenPositionPostfix")));
+				MainPatcher.harmony.Patch(AccessTools.Method(typeof(VROptions), nameof(VROptions.GetUseGazeBasedCursor)), postfix: new HarmonyMethod(typeof(MainPatcher).GetMethod("GetUseGazeBasedCursor_Postfix")));
+
 			}
 		}
-		public static void GetCursorScreenPositionPostfix(ref Vector2 __result)
-		{
-			__result = new Vector2((float)XRSettings.eyeTextureWidth, (float)XRSettings.eyeTextureHeight) * 0.5f;
-		}
 
-		public static void GetUseGazeBasedCursorPostfix(ref bool __result)
+
+
+
+		public static void GetUseGazeBasedCursor_Postfix(ref bool __result)
 		{
 			__result = true;
 		}
@@ -162,6 +167,7 @@ namespace VREnhancements
 
 		public static void MCC_Update_Postfix(MainCameraControl __instance)
 		{
+
 			Transform forwardReference = __instance.GetComponentInParent<PlayerController>().forwardReference;
 			if (MainPatcher.pdaIsClosing && MainPatcher.pdaCloseTimer < MainPatcher.pdaCloseDelay)
 			{

@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecyclingBin", "RecyclingBi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VREnhancements", "VREnhancements\VREnhancements.csproj", "{89B6A105-6072-46EF-B3CE-F67E3F088869}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoMask", "NoMask\NoMask.csproj", "{B1BD6174-D91A-42D5-94D5-4384FB9991C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		BZ_Debug|Any CPU = BZ_Debug|Any CPU
@@ -167,6 +169,18 @@ Global
 		{89B6A105-6072-46EF-B3CE-F67E3F088869}.SN1_Debug|Any CPU.Build.0 = SN1_Debug|Any CPU
 		{89B6A105-6072-46EF-B3CE-F67E3F088869}.SN1_Release|Any CPU.ActiveCfg = SN1_Release|Any CPU
 		{89B6A105-6072-46EF-B3CE-F67E3F088869}.SN1_Release|Any CPU.Build.0 = SN1_Release|Any CPU
+		{B1BD6174-D91A-42D5-94D5-4384FB9991C0}.BZ_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1BD6174-D91A-42D5-94D5-4384FB9991C0}.BZ_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1BD6174-D91A-42D5-94D5-4384FB9991C0}.BZ_Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1BD6174-D91A-42D5-94D5-4384FB9991C0}.BZ_Release|Any CPU.Build.0 = Release|Any CPU
+		{B1BD6174-D91A-42D5-94D5-4384FB9991C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1BD6174-D91A-42D5-94D5-4384FB9991C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1BD6174-D91A-42D5-94D5-4384FB9991C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1BD6174-D91A-42D5-94D5-4384FB9991C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1BD6174-D91A-42D5-94D5-4384FB9991C0}.SN1_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1BD6174-D91A-42D5-94D5-4384FB9991C0}.SN1_Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1BD6174-D91A-42D5-94D5-4384FB9991C0}.SN1_Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1BD6174-D91A-42D5-94D5-4384FB9991C0}.SN1_Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
